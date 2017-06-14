@@ -39,6 +39,12 @@
             font-weight: normal;
         }
         
+        .reveal h6 {
+            margin-top: 60px;
+            font-size: 32px;
+            font-weight: normal;
+        }
+        
         .reveal ol li {
             font-size: 30px;
         }
@@ -52,10 +58,12 @@
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
             <section>
-                <h1>前端成长路</h1>
-                <h3></h3>
+                <h2>前端成长路</h2>
+                <a href="#">
+                    <img width="300" height="300" data-src="./images/zxy-15.jpg" alt="Down arrow">
+                </a>
                 <p>
-                    <small>Created by <a>wangf</a></small>
+                    <small>Created by <a target="blank" href="https://www.cnblogs.com/">王方</a></small>
                 </p>
             </section>
             <section>
@@ -66,6 +74,11 @@
                         <li>页面中出现 php/jsp等，代码耦合，相互干扰 维护困难 时间越久 问题越突出</li>
                         <li>出现bug时，前后端职责不清晰 高并发时 服务器端压力大</li>
                     </ol>
+                </section>
+                <section>
+                    <a href="#">
+                        <img width="1300" height="600" data-src="./images/ques.png" alt="Down arrow">
+                    </a>
                 </section>
                 <section>
                     <h3>SPA(单页面应用)</h3>
@@ -98,7 +111,7 @@
                             export default {
                                 data: {
                                     return {}
-                                }，
+                                },
                                 ready: function () {
                                     this.$http({})
                                     .then(function (response) {
@@ -111,16 +124,16 @@
                 </section>
             </section>
 
-            <!-- Example of nested vertical slides -->
+            <!-- 开发诉求 -->
             <section>
                 <section>
                     <a href="#">
-                        <img width="1300" height="450" data-src="./images/line.png" alt="Down arrow">
+                        <img width="1300" height="600" data-src="./images/line.png" alt="Down arrow">
                     </a>
                 </section>
                 <section>
                     <a href="#">
-                        <img width="1300" height="450" data-src="./images/experience.png" alt="Down arrow">
+                        <img width="1300" height="600" data-src="./images/experience.png" alt="Down arrow">
                     </a>
                 </section>
 
@@ -131,16 +144,53 @@
                 </section>
                 <section>
                     <a href="#">
-                        <img width="900" height="600" data-src="./images/suqiu2.png" alt="Down arrow">
+                        <img width="1300" height="600" data-src="./images/suqiu2.png" alt="Down arrow">
                     </a>
                 </section>
                 <section>
                     <a href="#">
-                        <img width="1300" height="450" data-src="./images/built.png" alt="Down arrow">
+                        <img width="1300" height="600" data-src="./images/built.png" alt="Down arrow">
                     </a>
                 </section>
 
             </section>
+            <!--node端应用实践-->
+            <section>
+                <section>
+                    <h2>Node端应用实践</h2>
+                </section>
+                <section>
+                    <a href="#">
+                        <img width="1300" height="600" data-src="./images/nodegaikuo.png" alt="Down arrow">
+                    </a>
+                </section>
+                <section>
+                    <a href="#">
+                        <img width="1300" height="600" data-src="./images/bushufenli.png" alt="Down arrow">
+                    </a>
+                </section>
+                <section>
+                    <a href="#">
+                        <img width="1300" height="600" data-src="./images/banben.png" alt="Down arrow">
+                    </a>
+                </section>
+                <section>
+                    <a href="#">
+                        <img width="1300" height="600" data-src="./images/aconite.png" alt="Down arrow">
+                    </a>
+                </section>
+                <section>
+                    <a href="#">
+                        <img width="1300" height="600" data-src="./images/aconite.png" alt="Down arrow">
+                    </a>
+                </section>
+                <section>
+                    <a href="#">
+                        <img width="1300" height="600" data-src="./images/acojiagou.png" alt="Down arrow">
+                    </a>
+                </section>
+            </section>
+            <!--中间件机制-->
             <section>
                 <section>
                     <h2>中间件机制</h2>
@@ -149,22 +199,43 @@
                         <li>要在一条路由的处理链上插入中间件 function (req, res, next) 第一个参数是Request对象req。第二个参数是Response对象res。第三个则是用来驱动中间件调用链的函数next</li>
                     </ol>
                     <br>
-
                 </section>
                 <section>
-                    <h2>Basement Level 1</h2>
-                    <p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+                    <a href="#">
+                        <img width="1300" height="600" data-src="./images/midl.png" alt="Down arrow">
+                    </a>
                 </section>
                 <section>
-                    <h2>Basement Level 2</h2>
-                    <p>That's it, time to go back up.</p>
-                    <br>
-                    <a href="#/2">
-                        <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
+                    <a href="#">
+                        <img width="1300" height="600" data-src="./images/aco-route.png" alt="Down arrow">
+                    </a>
+                </section>
+                <section>
+                    <a href="#">
+                        <img width="1300" height="600" data-src="./images/aco-render.png" alt="Down arrow">
                     </a>
                 </section>
             </section>
-
+            <!--同构-->
+            <section>
+                <section>
+                    <h3>同构渲染</h3>
+                    <ol>
+                        <li class="fragment">较少首屏白屏时间</li>
+                        <li class="fragment">SEO</li>
+                        <li class="fragment">复用前端渲染逻辑</li>
+                    </ol>
+                    <h6 class="fragment">详情可查
+                        <a target="blank" href="http://www.tuicool.com/articles/juMjAnj">React同构思想简介</a>
+                    </h6>
+                </section>
+                <section>
+                    <p><a target="blank" href="./doc/actualCombat.pdf">React同构思想简介</a></p>
+                    <a href="#">
+                        <img width="1300" height="600" data-src="./images/xuanranliucheng.png" alt="Down arrow">
+                    </a>
+                </section>
+            </section>
             <section>
                 <h2>Slides</h2>
                 <p>
@@ -210,6 +281,7 @@
                         This slide has fragments which are also stepped through in the notes window.
                     </aside>
                 </section>
+                <!--特效-->
                 <section>
                     <h2>Fragment Styles</h2>
                     <p>There's different types of fragments, like:</p>
