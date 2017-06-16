@@ -258,6 +258,33 @@
                     <p>更多可查看<br><a target="blank" href="./doc/actualCombat.pdf">沪江在Node端的实践</a></p>
                 </section>
             </section>
+            <!--同构的思想-->
+            <section>
+                <section>
+                    <p>关于同构</p>
+                </section>
+                <section>
+                    <h3>再回顾下前后端渲染</h3>
+                    <ol>
+                        <li>前端渲染：浏览器一侧使用js，借助模版或vue、react、angular等框架做的DOM结构生成。</li>
+                        <li>后端渲染：服务器一侧，使用php、nodejs等技术实现DOM结构生成，并在HTTP请求中返回给浏览器。</li>
+                        <li>同构：浏览器一侧的JS、HTML和服务器一侧使用的JS、HTML使用同样的开发结构，同样的开发思路，同样的开发模式，尽可能实现代码复用。</li>
+                    </ol>
+                </section>
+                <section>
+                    <h3>渲染的历史</h3>
+                    <ol>
+                        <li class="fragment">Web开发的历程是很有趣的，最初php、asp的年代，一切内容都是服务器渲染的；</li>
+                        <li class="fragment">为了节省服务器资源，也更大限度利用客户端缓存，又出现了前后端分离的模式。此时Web的特点是，js和html放到静态目录，也可以CDN扩散，并以ajax方式获取后台的数据，在前端进行DOM组装。这种开发方式沿用至今，这是一个好的工作模式，专业的人做专业的事，确实有利于工作效率提高。</li>
+                        <li class="fragment">再而，随着nodejs的流行，前端jser们又开始蠢蠢欲动，尝试吞并web接入这个后台的前沿地盘，把后台推到更后。大概2014年后，又出现了很多nodejs直出的方案，把页面数据都一次在HTML的请求中返回，无需浏览器端再发起ajax获取数据，而且服务器端把DOM结构都渲染好，浏览器按trunk直接做图形渲染即可。不得不说，这个方案带来了很多好处：首屏速度更快，浏览器更省电。当然，随之而来的，就是更复杂的工作模式，jser需要做服务器端的逻辑，甚至一些代码需要同时用在浏览器和nodejs上。</li>
+                    </ol>
+                </section>
+                <section>
+                    <a href="#">
+                        <img width="1600" height="500" data-src="./images/vuessr.png" alt="Down arrow">
+                    </a>
+                </section>
+            </section>
             <!--angular实践-->
             <section>
                 <section>
