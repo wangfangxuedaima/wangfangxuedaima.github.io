@@ -285,6 +285,34 @@
                     </a>
                 </section>
             </section>
+            <section>
+                <section>
+                    <h3>对于vue-ssr的一些理解</h3>
+                </section>
+                <section>
+                    <h3>why vue-ssr and its usage seenario</h3>
+                    <ol>
+                        <li>前端用的是vue, 后端渲染用vue-ssr,可以无缝的和前端连接起来</li>
+                        <li>使用vue-ssr可以把数据渲染成HTML, 并在首屏展示, 用户体验好,传统的前端vue, 服务器第一次请求只返回#app的空DOM, 当js和ajax请求完成, 才会展示, 体验差</li>
+                        <li>最最最主要的作用是首屏渲染， 不合理的使用会增加服务器压力和流量</li>
+                    </ol>
+                </section>
+                <section>
+                    <h3>服务器渲染的奥秘</h3>
+                    <ol>
+                        <li>Vue全家桶非必须，但是Vuex是必需品</li>
+                        <li>服务器渲染，数据必须从服务器取，取了数据之后 达到前后端共享数据， 就得用Vuex</li>
+                    </ol>
+                </section>
+                <section>
+                    <h3>即然数据在服务器端已经取到了，为什么还要共享到前端？</h3>
+                    <p>这就涉及到ssr渲染的奥秘了，按理说，服务端把数据取到之后，渲染成HTML返回到前端，这样前端就用不到这些数据了，取数据只为了渲染，这种情况只适用于纯静态的渲染，就是拿到10条数据，渲染成一个列表，这个列表上没有交互，没有click、hover等效果，但是如果有click事件，有事件处理函数，这些是需要js来做的，但是vue-ssr不能渲染出js，只能是HTML+CSS，也就是说服务器端使用vue-ssr渲染出来的返回到浏览器的也只能是HTML+CSS</p>
+                </section>
+                <section>
+                    <h3>事件怎么办</h3>
+                    <p>这就回到了第一个问题，为什么前端也需要数据，既然服务器不能增加事件，那只能前端增加喽。vue-ssr有一个比较关键的地方就是，前后必须共用同一套vue文件，也就是说一个.vue文件，前端也要用，后端也要用，为什么要这样做，大家想过没有？答案：就是后端从vuex里面取到数据之后，对'template'里面的HTML使用vue的语法进渲染，最终渲染成真正的HTML，对'style'里面的内容，使用loader，抽取成css，所以服务端渲染的成果是HTML+CSS；前端也是从vuex里面取到数据，前端的渲染主要做2件事，1.拿到数据，使用virtual-dom进行预渲染，然后和服务端渲染出来的进行比对，比对两边渲染的内容是不是一致的；2.对DOM元素的事件进行绑定，也就是回答的问题，事件在这块进行的处理。</p>
+                </section>
+            </section>
             <!--angular实践-->
             <section>
                 <section>
